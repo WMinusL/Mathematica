@@ -1,0 +1,213 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9041,        205]
+NotebookOptionsPosition[      8415,        186]
+NotebookOutlinePosition[      8772,        202]
+CellTagsIndexPosition[      8729,        199]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "x", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{
+       RowBox[{"x", "[", "t", "]"}], "/.", 
+       RowBox[{"First", "[", 
+        RowBox[{"DSolve", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"\[Omega]", "^", "2"}], "*", 
+               RowBox[{"x", "[", "t", "]"}]}], "+", 
+              RowBox[{"\[Beta]", "*", 
+               RowBox[{
+                SuperscriptBox["x", "\[Prime]",
+                 MultilineFunction->None], "[", "t", "]"}]}], "+", 
+              RowBox[{
+               SuperscriptBox["x", "\[Prime]\[Prime]",
+                MultilineFunction->None], "[", "t", "]"}]}], "\[Equal]", 
+             RowBox[{"F", "*", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"\[CapitalOmega]", "*", "t"}], "]"}]}]}], ",", 
+            RowBox[{
+             RowBox[{"x", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}],
+           ",", "x", ",", "t"}], "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "6"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Beta]", ",", "5"}], "}"}], ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]", ",", "5"}], "}"}], ",", "0", ",", "50"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"F", ",", "0"}], "}"}], ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[CapitalOmega]", ",", "10"}], "}"}], ",", "0", ",", "100"}], 
+    "}"}]}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7400076124831743`*^9, 3.7400076397538013`*^9}, {
+   3.7400079311001124`*^9, 3.740007931718604*^9}, {3.740008159789113*^9, 
+   3.7400081743446026`*^9}, {3.7400083062380056`*^9, 
+   3.7400083448472695`*^9}, {3.740008409259139*^9, 3.740008802303998*^9}, {
+   3.7400089779440823`*^9, 3.7400091737561393`*^9}, {3.740009214236523*^9, 
+   3.74000928598925*^9}, {3.740009399042513*^9, 3.740009405688436*^9}, {
+   3.740009440175*^9, 3.740009462802549*^9}, {3.740009543463604*^9, 
+   3.74000959684006*^9}, {3.740009633669031*^9, 3.7400096377112565`*^9}, {
+   3.7400096881884594`*^9, 3.740009719570479*^9}, {3.74000978332473*^9, 
+   3.740009785462309*^9}, {3.740009852192655*^9, 3.740009880380414*^9}, 
+   3.740009968783518*^9, {3.740010409675979*^9, 3.74001043595048*^9}, {
+   3.740010511989602*^9, 3.740010593102518*^9}, {3.7400109737747607`*^9, 
+   3.740010984812287*^9}, 3.7400110257208705`*^9, {3.7400111858356953`*^9, 
+   3.7400112851992645`*^9}, {3.7400113488935027`*^9, 3.740011367158904*^9}, {
+   3.7400114155798807`*^9, 3.7400114165956097`*^9}, {3.740011522539213*^9, 
+   3.740011525970502*^9}, {3.7400115562707205`*^9, 3.7400116310523977`*^9}, {
+   3.74001170375364*^9, 3.7400117560564814`*^9}, {3.7400118066613455`*^9, 
+   3.740011815964097*^9}, {3.740011911056946*^9, 3.7400119116250877`*^9}, {
+   3.7401214723066607`*^9, 3.7401215017244387`*^9}, {3.7401215341341324`*^9, 
+   3.740121619221161*^9}, {3.7401315444975553`*^9, 3.7401315567917557`*^9}, {
+   3.7401317177460847`*^9, 3.7401317180429907`*^9}, {3.74013175713466*^9, 
+   3.7401317599475064`*^9}, {3.7401318015924425`*^9, 3.740131859739165*^9}},
+ CellLabel->"",ExpressionUUID->"faf0739b-b79d-434b-8560-0622fe303729"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`F$$ = 2.32, $CellContext`\[Beta]$$ = 
+    0., $CellContext`\[Omega]$$ = 10.3, $CellContext`\[CapitalOmega]$$ = 41.2,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Beta]$$], 5}, 0, 10}, {{
+       Hold[$CellContext`\[Omega]$$], 5}, 0, 50}, {{
+       Hold[$CellContext`F$$], 0}, 0, 10}, {{
+       Hold[$CellContext`\[CapitalOmega]$$], 10}, 0, 100}}, Typeset`size$$ = {
+    360., {102., 107.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Beta]$582157$$ = 
+    0, $CellContext`\[Omega]$582158$$ = 0, $CellContext`F$582159$$ = 
+    0, $CellContext`\[CapitalOmega]$582160$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`F$$ = 0, $CellContext`\[Beta]$$ = 
+        5, $CellContext`\[Omega]$$ = 5, $CellContext`\[CapitalOmega]$$ = 10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$582157$$, 0], 
+        Hold[$CellContext`\[Omega]$$, $CellContext`\[Omega]$582158$$, 0], 
+        Hold[$CellContext`F$$, $CellContext`F$582159$$, 0], 
+        Hold[$CellContext`\[CapitalOmega]$$, \
+$CellContext`\[CapitalOmega]$582160$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        Evaluate[
+         ReplaceAll[
+          $CellContext`x[$CellContext`t], 
+          First[
+           
+           DSolve[{$CellContext`\[Omega]$$^2 $CellContext`x[$CellContext`t] + \
+$CellContext`\[Beta]$$ Derivative[1][$CellContext`x][$CellContext`t] + 
+              Derivative[
+               2][$CellContext`x][$CellContext`t] == $CellContext`F$$ 
+              Cos[$CellContext`\[CapitalOmega]$$ $CellContext`t], \
+$CellContext`x[0] == 0, Derivative[1][$CellContext`x][0] == 
+             1}, $CellContext`x, $CellContext`t]]]], {$CellContext`t, 0, 6}, 
+        PlotRange -> Full], 
+      "Specifications" :> {{{$CellContext`\[Beta]$$, 5}, 0, 
+         10}, {{$CellContext`\[Omega]$$, 5}, 0, 50}, {{$CellContext`F$$, 0}, 
+         0, 10}, {{$CellContext`\[CapitalOmega]$$, 10}, 0, 100}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {204., 210.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.740010718972556*^9, {3.740010987460233*^9, 3.7400109968938017`*^9}, 
+   3.740011028355816*^9, {3.7400112203592663`*^9, 3.740011251783577*^9}, {
+   3.740011287489708*^9, 3.740011304861958*^9}, {3.7400113510852757`*^9, 
+   3.740011389529977*^9}, {3.7400114201562223`*^9, 3.740011422415104*^9}, {
+   3.7400115393369904`*^9, 3.7400116094900703`*^9}, {3.740011707054499*^9, 
+   3.740011717949892*^9}, {3.7400118082443757`*^9, 3.740011842001237*^9}, {
+   3.740011913791811*^9, 3.740011942893693*^9}, 3.7401215639496956`*^9, {
+   3.7401216197992926`*^9, 3.7401216626944647`*^9}, 3.740131557401205*^9, {
+   3.7401316557396016`*^9, 3.7401316585523863`*^9}, 3.7401319196401715`*^9},
+ CellLabel->
+  "Out[120]=",ExpressionUUID->"98c487cb-a433-4320-b044-069804bba9a2"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", " "}]], "Input",
+ CellChangeTimes->{{3.7400123777430773`*^9, 
+  3.740012378890191*^9}},ExpressionUUID->"d2956191-9c35-4dab-9e27-\
+a443f9c0f742"],
+
+Cell[BoxData["     "], "Input",
+ CellChangeTimes->{{3.740010269813354*^9, 
+  3.7400102705346437`*^9}},ExpressionUUID->"fc0cf7a8-cada-436e-9726-\
+8a04424c0e9e"]
+},
+WindowSize->{903, 581},
+WindowMargins->{{Automatic, 219}, {Automatic, 15}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3679, 78, 177, "Input",ExpressionUUID->"faf0739b-b79d-434b-8560-0622fe303729"],
+Cell[4262, 102, 3782, 70, 433, "Output",ExpressionUUID->"98c487cb-a433-4320-b044-069804bba9a2"]
+}, Open  ]],
+Cell[8059, 175, 190, 4, 48, "Input",ExpressionUUID->"d2956191-9c35-4dab-9e27-a443f9c0f742"],
+Cell[8252, 181, 159, 3, 28, "Input",ExpressionUUID->"fc0cf7a8-cada-436e-9726-8a04424c0e9e"]
+}
+]
+*)
+

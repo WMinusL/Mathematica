@@ -1,0 +1,291 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10833,        283]
+NotebookOptionsPosition[     10297,        265]
+NotebookOutlinePosition[     10654,        281]
+CellTagsIndexPosition[     10611,        278]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"\[Gamma]", ",", "A", ",", "s1", ",", "v", ",", "x", ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Gamma]", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "200"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Omega]d", "=", 
+   RowBox[{"2", " ", "Pi"}]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"k", "=", "5"}], ";", " ", 
+    RowBox[{"g", "=", "9.81"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"k", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", "9.81"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"time", "=", "30"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"s1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"v", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"A", "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"\[Omega]d", "*", "t"}], "]"}]}], "-", 
+           RowBox[{"\[Gamma]", "*", 
+            RowBox[{"v", "[", "t", "]"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"g", "-", "k"}], ")"}], "*", 
+            RowBox[{"x", "[", "t", "]"}]}], "-", 
+           RowBox[{"1.635", "*", 
+            RowBox[{
+             RowBox[{"x", "[", "t", "]"}], "^", "3"}]}]}]}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{"v", "[", "t", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"v", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "v"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", 
+         RowBox[{"-", "time"}], ",", "time"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"MaxSteps", "\[Rule]", "1000000"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ParametricPlot", "[", 
+     RowBox[{
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], ",", 
+          RowBox[{"v", "[", "t", "]"}]}], "}"}], "/.", "s1"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"-", "time"}], ",", "time"}], "}"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<\[Phi]\>\"", ",", "\"\<\[Phi]\\dot\>\""}], "}"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+      RowBox[{"AspectRatio", "\[Rule]", "0.85"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Thickness", "[", "0.0001", "]"}], "}"}]}], ",", 
+      RowBox[{"AxesStyle", "\[Rule]", "Thick"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", ",", "200"}], "}"}], ",", "100", ",", "1000", ",", "0.1"}],
+     "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8077438214511085`*^9, 3.8077438224362326`*^9}, 
+   3.8077448724893064`*^9, {3.8077449332025795`*^9, 3.8077449529298315`*^9}, {
+   3.8077455091146507`*^9, 3.80774553524434*^9}, {3.807745933915888*^9, 
+   3.807745963511963*^9}, {3.8077462228060064`*^9, 3.8077462260563498`*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->
+  "In[142]:=",ExpressionUUID->"130046b2-cb9e-4416-a847-3667d7ab1b81"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 315.3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`A$$], 200}, 100, 1000, 0.1}}, Typeset`size$$ = {
+    360., {154., 159.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`A$367292$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`A$$ = 200}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`A$$, $CellContext`A$367292$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`s1 = 
+        NDSolve[{
+          Derivative[
+            1][$CellContext`v][$CellContext`t] == $CellContext`A$$ 
+             Sin[$CellContext`\[Omega]d $CellContext`t] - $CellContext`\
+\[Gamma] $CellContext`v[$CellContext`t] + ($CellContext`g - $CellContext`k) \
+$CellContext`x[$CellContext`t] - 1.635 $CellContext`x[$CellContext`t]^3, 
+           Derivative[
+            1][$CellContext`x][$CellContext`t] == \
+$CellContext`v[$CellContext`t], $CellContext`x[0] == 0, $CellContext`v[0] == 
+           0}, {$CellContext`x, $CellContext`v}, {$CellContext`t, \
+-$CellContext`time, $CellContext`time}, MaxSteps -> 1000000]; ParametricPlot[
+         Evaluate[
+          ReplaceAll[{
+            $CellContext`x[$CellContext`t], 
+            $CellContext`v[$CellContext`t]}, $CellContext`s1]], \
+{$CellContext`t, -$CellContext`time, $CellContext`time}, 
+         AxesLabel -> {"\[Phi]", "\[Phi]\\dot"}, PlotRange -> All, 
+         AspectRatio -> 0.85, PlotStyle -> {
+           Thickness[0.0001]}, AxesStyle -> Thick]), 
+      "Specifications" :> {{{$CellContext`A$$, 200}, 100, 1000, 0.1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {220., 226.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8077436444987664`*^9, {3.8077438231719*^9, 3.8077438398060417`*^9}, {
+   3.8077448730606823`*^9, 3.807744886119771*^9}, {3.8077449347126055`*^9, 
+   3.807744953868434*^9}, {3.8077452383299737`*^9, 3.807745239146737*^9}, 
+   3.8077453397850037`*^9, {3.8077459285589924`*^9, 3.8077459640185785`*^9}, 
+   3.807746140384483*^9, {3.807746227092614*^9, 3.8077462285277357`*^9}},
+ CellLabel->
+  "Out[148]=",ExpressionUUID->"ef680f5f-018d-4456-aa32-a8cf4582d4f7"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"\[Gamma]", ",", "A", ",", "s1", ",", "v", ",", "x", ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Gamma]", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "200"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Omega]d", "=", 
+   RowBox[{"2", " ", "Pi"}]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"k", "=", "5"}], ";", " ", 
+    RowBox[{"g", "=", "9.81"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"k", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", "9.81"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"time", "=", "30"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"s1", "=", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"v", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"A", "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"\[Omega]d", "*", "t"}], "]"}]}], "-", 
+           RowBox[{"\[Gamma]", "*", 
+            RowBox[{"v", "[", "t", "]"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"g", "-", "k"}], ")"}], "*", 
+            RowBox[{"x", "[", "t", "]"}]}], "-", 
+           RowBox[{"1.635", "*", 
+            RowBox[{
+             RowBox[{"x", "[", "t", "]"}], "^", "3"}]}]}]}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{"v", "[", "t", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{"v", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "v"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", 
+         RowBox[{"-", "time"}], ",", "time"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"MaxSteps", "\[Rule]", "1000000"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ParametricPlot", "[", 
+     RowBox[{
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], ",", 
+          RowBox[{"v", "[", "t", "]"}]}], "}"}], "/.", "s1"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"-", "time"}], ",", "time"}], "}"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<\[Phi]\>\"", ",", "\"\<\[Phi]\\dot\>\""}], "}"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+      RowBox[{"AspectRatio", "\[Rule]", "0.85"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Thickness", "[", "0.0001", "]"}], "}"}]}], ",", 
+      RowBox[{"AxesStyle", "\[Rule]", "Thick"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", "100", ",", "1000", ",", "0.1"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.807746271791216*^9, 3.8077463034479256`*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->
+  "In[149]:=",ExpressionUUID->"27b23106-aa71-4bc7-8344-2ff138d1fc8a"]
+},
+WindowSize->{1920, 976},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3467, 91, 288, "Input",ExpressionUUID->"130046b2-cb9e-4416-a847-3667d7ab1b81"],
+Cell[4050, 115, 3052, 59, 465, "Output",ExpressionUUID->"ef680f5f-018d-4456-aa32-a8cf4582d4f7"]
+}, Open  ]],
+Cell[7117, 177, 3176, 86, 288, "Input",ExpressionUUID->"27b23106-aa71-4bc7-8344-2ff138d1fc8a"]
+}
+]
+*)
+

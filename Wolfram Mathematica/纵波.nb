@@ -1,0 +1,1551 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     82107,       1543]
+NotebookOptionsPosition[     81634,       1525]
+NotebookOutlinePosition[     82020,       1542]
+CellTagsIndexPosition[     81977,       1539]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "x", ",", "t", ",", "i", ",", "j", ",", "table", ",", "t0", ",", "ft"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t0", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"table", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"i", "-", 
+      RowBox[{"0.4", 
+       RowBox[{"Cos", "[", "t", "]"}], 
+       RowBox[{"Sin", "[", "i", "]"}]}], "-", 
+      RowBox[{"j", "*", 
+       RowBox[{"(", 
+        RowBox[{"i", "-", 
+         RowBox[{"0.4", 
+          RowBox[{"Cos", "[", "t", "]"}], 
+          RowBox[{"Sin", "[", "i", "]"}]}]}], ")"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{"4", "Pi"}], ",", 
+       RowBox[{"Pi", "/", "16"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", "1"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Part", "[", 
+       RowBox[{"table", ",", "All", ",", "2"}], "]"}], "=", "k"}], ";", 
+     RowBox[{"t0", "=", 
+      RowBox[{"Append", "[", 
+       RowBox[{"t0", ",", "table"}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"-", "1"}], ",", "1", ",", "0.2"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"t0", "=", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"t0", ",", "1"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Show", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"0.6", 
+            RowBox[{"Cos", "[", "t", "]"}], 
+            RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+           RowBox[{"1", "+", 
+            RowBox[{"0.2", 
+             RowBox[{"Cos", "[", "t", "]"}], 
+             RowBox[{"Cos", "[", "x", "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", 
+           RowBox[{"4", "Pi"}]}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "3"}], "}"}]}], ",", 
+         RowBox[{"PlotLabels", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Displacement\>\"", ",", "\"\<Density\>\""}], "}"}]}], 
+         ",", 
+         RowBox[{"Ticks", "\[Rule]", "None"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"DensityPlot", "[", 
+        RowBox[{
+         RowBox[{"Log", "[", 
+          RowBox[{"2", "+", 
+           RowBox[{"0.2", 
+            RowBox[{"Cos", "[", "t", "]"}], 
+            RowBox[{"Cos", "[", "x", "]"}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", 
+           RowBox[{"4", "Pi"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", "1.5", ",", "2.5"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ColorFunction", "\[Rule]", "\"\<TemperatureMap\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ColorFunctionScaling", "\[Rule]", "False"}], ",", 
+         RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PointSize", "[", "0.006", "]"}], ",", 
+          RowBox[{"Point", "[", "t0", "]"}]}], "}"}], "]"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", 
+       RowBox[{"4", "Pi"}]}], "}"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7704407635516443`*^9, 3.770440937412508*^9}, {
+   3.770443032950489*^9, 3.7704430976234264`*^9}, {3.77044313113231*^9, 
+   3.7704431457606654`*^9}, {3.7704433853461432`*^9, 3.770443471853134*^9}, {
+   3.7704435282208853`*^9, 3.770443567474363*^9}, {3.7704436245395403`*^9, 
+   3.770443648043263*^9}, {3.7710498766690865`*^9, 3.7710499838007154`*^9}, {
+   3.771050026851099*^9, 3.7710500371017785`*^9}, 3.77105008864927*^9, {
+   3.771050128308278*^9, 3.771050128761649*^9}, {3.77105021654021*^9, 
+   3.771050260508834*^9}, {3.771050391951868*^9, 3.771050414644088*^9}, {
+   3.7710504955151176`*^9, 3.7710504961399417`*^9}, {3.771050545972836*^9, 
+   3.771050567658553*^9}, {3.7710506560362206`*^9, 3.7710507092601194`*^9}, {
+   3.7710507671324415`*^9, 3.77105077007117*^9}, {3.7710509278397403`*^9, 
+   3.771050975037685*^9}, {3.7710510101046867`*^9, 3.7710512508370986`*^9}, {
+   3.771051282136527*^9, 3.771051286355708*^9}, {3.7710513267074804`*^9, 
+   3.7710513883248835`*^9}, {3.7710514198926888`*^9, 
+   3.7710514585487375`*^9}, {3.7710514909258776`*^9, 
+   3.7710515047245164`*^9}, {3.771052255954217*^9, 3.771052309205971*^9}, {
+   3.7710523722267857`*^9, 3.771052390169676*^9}, {3.771052503340895*^9, 
+   3.7710525393772273`*^9}, {3.771052570369503*^9, 3.771052625851925*^9}, {
+   3.7710526824218597`*^9, 3.7710528508708696`*^9}, {3.7710529963005323`*^9, 
+   3.7710531103020277`*^9}, {3.7710533516622443`*^9, 
+   3.7710535463250923`*^9}, {3.771053712606358*^9, 3.7710537385944853`*^9}, {
+   3.771054767787097*^9, 3.7710548565995264`*^9}, {3.7710549248356647`*^9, 
+   3.7710550057364173`*^9}, 3.77105503886685*^9, {3.7710550841871614`*^9, 
+   3.7710551308112183`*^9}, {3.7710551628998194`*^9, 3.771055220730011*^9}, {
+   3.7710553762557535`*^9, 3.7710554212531*^9}, {3.7710555487252855`*^9, 
+   3.7710556478234005`*^9}, {3.771055680196086*^9, 3.771055784998599*^9}, {
+   3.7710559018544188`*^9, 3.771056009161999*^9}, {3.771058200860201*^9, 
+   3.7710582334254923`*^9}, 3.7710583144108233`*^9, 3.7710583849457617`*^9, {
+   3.771059354575633*^9, 3.7710593765640125`*^9}, {3.7710594317256804`*^9, 
+   3.7710595018580217`*^9}, 3.7710596130061088`*^9, {3.7710597463360705`*^9, 
+   3.771059748524246*^9}, 3.7710598109179287`*^9, 3.7710599613041515`*^9, 
+   3.771059993110565*^9, {3.771060057623187*^9, 3.771060072409501*^9}, {
+   3.7710601048532295`*^9, 3.771060108291547*^9}, {3.771060208824518*^9, 
+   3.771060234682124*^9}, 3.771060369541394*^9, {3.7710604875763702`*^9, 
+   3.771060521562745*^9}, {3.7710606091241407`*^9, 3.7710606172082543`*^9}, {
+   3.77106066010257*^9, 3.771060668744968*^9}, {3.7710607749649444`*^9, 
+   3.771060777840273*^9}, {3.771060810469265*^9, 3.771060812422599*^9}, {
+   3.7710608446401076`*^9, 3.7710608449997416`*^9}, {3.771060955768693*^9, 
+   3.771061004931226*^9}, {3.771061064213199*^9, 3.77106109190893*^9}, 
+   3.7710611865188*^9, {3.7710615408474836`*^9, 3.7710615430039053`*^9}, 
+   3.7710615980602355`*^9, {3.7710616434116387`*^9, 3.7710616463182716`*^9}, 
+   3.77106167935394*^9, {3.7712258102973747`*^9, 3.7712258148721733`*^9}, {
+   3.7712258945320244`*^9, 3.7712259837264175`*^9}, {3.7712260762568755`*^9, 
+   3.771226078194689*^9}, {3.7712261100923595`*^9, 3.7712261478802347`*^9}, {
+   3.771226202864143*^9, 3.7712262033199224`*^9}, {3.771227385421479*^9, 
+   3.7712275132349024`*^9}, {3.7712276306158447`*^9, 
+   3.7712276640244694`*^9}, {3.7712284778493323`*^9, 3.771228545291945*^9}, {
+   3.771228575353526*^9, 3.7712286619159184`*^9}, {3.7712286946713266`*^9, 
+   3.7712287151266065`*^9}, {3.7712287453237867`*^9, 
+   3.7712287644446344`*^9}, {3.7712289015748243`*^9, 
+   3.7712289693425303`*^9}, {3.771229015075185*^9, 3.7712290757478666`*^9}, 
+   3.7712291184013815`*^9, 3.771229159684575*^9, {3.7712292032440453`*^9, 
+   3.7712292191883907`*^9}, {3.771229269913289*^9, 3.7712293062630143`*^9}, {
+   3.7712314157581053`*^9, 3.771231479875579*^9}, {3.771231537554305*^9, 
+   3.7712316409646688`*^9}, {3.7712317145308657`*^9, 3.771231816014042*^9}, 
+   3.77123195872227*^9, {3.771232187243896*^9, 3.7712322269576535`*^9}, {
+   3.771232276914913*^9, 3.7712322830215764`*^9}, {3.771232434243021*^9, 
+   3.771232444082663*^9}, {3.7712325886686835`*^9, 3.771232620412797*^9}, {
+   3.771232682444815*^9, 3.771232686564793*^9}},
+ CellLabel->
+  "In[327]:=",ExpressionUUID->"3f8ac071-97d8-4f2a-a409-3fc5344e2dae"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 7.28514320830679, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 4 Pi}}, Typeset`size$$ = {
+    957., {247., 255.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$157550$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$157550$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[{
+         0.6 Cos[$CellContext`t$$] Sin[$CellContext`x], 1 + 
+          0.2 Cos[$CellContext`t$$] Cos[$CellContext`x]}, {$CellContext`x, 0, 
+          4 Pi}, PlotRange -> {-2, 3}, 
+         PlotLabels -> {"Displacement", "Density"}, Ticks -> None], 
+        DensityPlot[
+         Log[
+         2 + 0.2 Cos[$CellContext`t$$] Cos[$CellContext`x]], {$CellContext`x, 
+          0, 4 Pi}, {$CellContext`y, 1.5, 2.5}, ColorFunction -> 
+         "TemperatureMap", ColorFunctionScaling -> False, PlotPoints -> 50], 
+        Graphics[{
+          PointSize[0.006], 
+          
+          Point[{{0., -1.}, {
+            Rational[1, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[3, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[5, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[7, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], -1.}, {
+            Rational[9, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -1.}, {3.141592653589793, -1.}, {
+            Rational[17, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -1.}, {
+            Rational[9, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -1.}, {
+            Rational[19, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -1.}, {
+            Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -1.}, {
+            Rational[21, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -1.}, {
+            Rational[11, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -1.}, {
+            Rational[23, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -1.}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], -1.}, {
+            Rational[25, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -1.}, {
+            Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -1.}, {
+            Rational[27, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -1.}, {
+            Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -1.}, {
+            Rational[29, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -1.}, {
+            Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -1.}, {
+            Rational[31, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -1.}, {
+            6.283185307179586, -1.}, {
+            Rational[33, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[35, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[37, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], -1.}, {
+            Rational[41, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[43, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[45, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -1.}, {
+            Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -1.}, {9.42477796076938, -1.}, {
+            Rational[49, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -1.}, {
+            Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -1.}, {
+            Rational[51, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -1.}, {
+            Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -1.}, {
+            Rational[53, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -1.}, {
+            Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -1.}, {
+            Rational[55, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -1.}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], -1.}, {
+            Rational[57, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -1.}, {
+            Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -1.}, {
+            Rational[59, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -1.}, {
+            Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -1.}, {
+            Rational[61, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -1.}, {
+            Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -1.}, {
+            Rational[63, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -1.}, {
+            12.566370614359172`, -1.}, {0., -0.8}, {
+            Rational[1, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[3, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[5, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[7, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], -0.8}, {
+            Rational[9, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.8}, {3.141592653589793, -0.8}, {
+            Rational[17, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.8}, {
+            Rational[9, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.8}, {
+            Rational[19, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.8}, {
+            Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.8}, {
+            Rational[21, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.8}, {
+            Rational[11, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.8}, {
+            Rational[23, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.8}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], -0.8}, {
+            Rational[25, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.8}, {
+            Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.8}, {
+            Rational[27, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.8}, {
+            Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.8}, {
+            Rational[29, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.8}, {
+            Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.8}, {
+            Rational[31, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.8}, {
+            6.283185307179586, -0.8}, {
+            Rational[33, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[35, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[37, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], -0.8}, {
+            Rational[41, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[43, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[45, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.8}, {
+            Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.8}, {9.42477796076938, -0.8}, {
+            Rational[49, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.8}, {
+            Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.8}, {
+            Rational[51, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.8}, {
+            Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.8}, {
+            Rational[53, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.8}, {
+            Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.8}, {
+            Rational[55, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.8}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], -0.8}, {
+            Rational[57, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.8}, {
+            Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.8}, {
+            Rational[59, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.8}, {
+            Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.8}, {
+            Rational[61, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.8}, {
+            Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.8}, {
+            Rational[63, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.8}, {
+            12.566370614359172`, -0.8}, {0., -0.6}, {
+            Rational[1, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[3, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[5, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[7, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], -0.6}, {
+            Rational[9, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.6}, {3.141592653589793, -0.6}, {
+            Rational[17, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.6}, {
+            Rational[9, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.6}, {
+            Rational[19, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.6}, {
+            Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.6}, {
+            Rational[21, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.6}, {
+            Rational[11, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.6}, {
+            Rational[23, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.6}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], -0.6}, {
+            Rational[25, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.6}, {
+            Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.6}, {
+            Rational[27, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.6}, {
+            Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.6}, {
+            Rational[29, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.6}, {
+            Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.6}, {
+            Rational[31, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.6}, {
+            6.283185307179586, -0.6}, {
+            Rational[33, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[35, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[37, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], -0.6}, {
+            Rational[41, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[43, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[45, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.6}, {
+            Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.6}, {9.42477796076938, -0.6}, {
+            Rational[49, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.6}, {
+            Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.6}, {
+            Rational[51, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.6}, {
+            Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.6}, {
+            Rational[53, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.6}, {
+            Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.6}, {
+            Rational[55, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.6}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], -0.6}, {
+            Rational[57, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.6}, {
+            Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], -0.6}, {
+            Rational[59, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.6}, {
+            Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.6}, {
+            Rational[61, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], -0.6}, {
+            Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], -0.6}, {
+            Rational[63, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.6}, {
+            12.566370614359172`, -0.6}, {0., -0.3999999999999999}, {
+            Rational[1, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[3, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[5, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[7, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[1, 2] Pi - 0.4 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[9, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            3.141592653589793, -0.3999999999999999}, {
+            Rational[17, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[9, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[19, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[21, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[11, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[23, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[3, 2] Pi + 
+             0.4 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[25, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[13, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[27, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[29, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[15, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[31, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            6.283185307179586, -0.3999999999999999}, {
+            Rational[33, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[35, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[37, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[5, 2] Pi - 0.4 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[41, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[43, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[45, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.3999999999999999}, {
+            9.42477796076938, -0.3999999999999999}, {
+            Rational[49, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[25, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[51, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[53, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[27, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[55, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[7, 2] Pi + 
+             0.4 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[57, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[29, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[59, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[61, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[31, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.3999999999999999}, {
+            Rational[63, 16] Pi + 
+             0.0780361288064513 Cos[$CellContext`t$$], -0.3999999999999999}, {
+            12.566370614359172`, -0.3999999999999999}, {
+            0., -0.19999999999999996`}, {
+            Rational[1, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[3, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[5, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[7, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[1, 2] Pi - 0.4 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[9, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            3.141592653589793, -0.19999999999999996`}, {
+            Rational[17, 16] Pi + 
+             0.0780361288064513 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[9, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[19, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[5, 4] Pi + 
+             0.282842712474619 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[21, 16] Pi + 
+             0.3325878449210181 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[11, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[23, 16] Pi + 
+             0.3923141121612922 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[3, 2] Pi + 
+             0.4 Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[25, 16] Pi + 
+             0.3923141121612922 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[13, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[27, 16] Pi + 
+             0.3325878449210181 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[7, 4] Pi + 
+             0.282842712474619 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[29, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[15, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[31, 16] Pi + 
+             0.0780361288064513 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            6.283185307179586, -0.19999999999999996`}, {
+            Rational[33, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[35, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[37, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[5, 2] Pi - 0.4 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[41, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[43, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[45, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            9.42477796076938, -0.19999999999999996`}, {
+            Rational[49, 16] Pi + 
+             0.0780361288064513 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[25, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[51, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[13, 4] Pi + 
+             0.282842712474619 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[53, 16] Pi + 
+             0.3325878449210181 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[27, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[55, 16] Pi + 
+             0.3923141121612922 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[7, 2] Pi + 
+             0.4 Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[57, 16] Pi + 
+             0.3923141121612922 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[29, 8] Pi + 
+             0.36955181300451473` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[59, 16] Pi + 
+             0.3325878449210181 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[15, 4] Pi + 
+             0.282842712474619 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[61, 16] Pi + 
+             0.22222809320784087` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[31, 8] Pi + 
+             0.15307337294603593` 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            Rational[63, 16] Pi + 
+             0.0780361288064513 
+              Cos[$CellContext`t$$], -0.19999999999999996`}, {
+            12.566370614359172`, -0.19999999999999996`}, {0., 0.}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 0.}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[11, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[13, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {
+            Rational[7, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.}, {Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], 0.}, {3.141592653589793, 0.}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {Rational[9, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.}, {
+            Rational[19, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.}, {
+            Rational[21, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[11, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.}, {
+            Rational[23, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 0.}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {6.283185307179586, 0.}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[39, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 0.}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.}, {
+            Rational[47, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {9.42477796076938, 0.}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 0.}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.}, {Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.}, {Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.}, {Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.}, {12.566370614359172`, 0.}, {0., 0.20000000000000018`}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[1, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[1, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[3, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[5, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[11, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[3, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[13, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[7, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[15, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {3.141592653589793, 
+            0.20000000000000018`}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[9, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[19, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[5, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[21, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[11, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[23, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[13, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[7, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[15, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {6.283185307179586, 
+            0.20000000000000018`}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[17, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[9, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[19, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[39, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[21, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[11, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[23, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[47, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {9.42477796076938, 
+            0.20000000000000018`}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[25, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[13, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[27, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[29, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[15, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[31, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.20000000000000018`}, {12.566370614359172`, 
+            0.20000000000000018`}, {0., 0.40000000000000013`}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[1, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[1, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[3, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[5, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[11, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[3, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[13, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[7, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[15, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {3.141592653589793, 
+            0.40000000000000013`}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[9, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[19, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[5, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[21, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[11, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[23, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[13, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[7, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[15, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {6.283185307179586, 
+            0.40000000000000013`}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[17, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[9, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[19, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[39, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[21, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[11, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[23, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[47, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {9.42477796076938, 
+            0.40000000000000013`}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[25, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[13, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[27, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[29, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[15, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[31, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.40000000000000013`}, {12.566370614359172`, 
+            0.40000000000000013`}, {0., 0.6000000000000001}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[1, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[1, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[3, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[5, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[11, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[3, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[13, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[7, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[15, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {3.141592653589793, 0.6000000000000001}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[9, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[19, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[5, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[21, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[11, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[23, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[13, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[7, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[15, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {6.283185307179586, 0.6000000000000001}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[17, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[9, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[19, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[39, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[21, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[11, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[23, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[47, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {9.42477796076938, 0.6000000000000001}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[25, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[13, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[27, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[29, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[15, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[31, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.6000000000000001}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.6000000000000001}, {12.566370614359172`, 0.6000000000000001}, {
+            0., 0.8}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 0.8}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[5, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[11, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[3, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[13, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[7, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[15, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {3.141592653589793, 0.8}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {
+            Rational[9, 8] Pi + 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.8}, {Rational[19, 16] Pi + 
+             0.22222809320784087` Cos[$CellContext`t$$], 0.8}, {
+            Rational[5, 4] Pi + 0.282842712474619 Cos[$CellContext`t$$], 
+             0.8}, {Rational[21, 16] Pi + 
+             0.3325878449210181 Cos[$CellContext`t$$], 0.8}, {
+            Rational[11, 8] Pi + 0.36955181300451473` Cos[$CellContext`t$$], 
+             0.8}, {Rational[23, 16] Pi + 
+             0.3923141121612922 Cos[$CellContext`t$$], 0.8}, {
+            Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 0.8}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.8}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.8}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.8}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {6.283185307179586, 0.8}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[19, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[39, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 0.8}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 0.8}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {
+            Rational[23, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             0.8}, {Rational[47, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], 0.8}, {9.42477796076938, 0.8}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.8}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.8}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.8}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 0.8}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             0.8}, {Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 0.8}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             0.8}, {Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 0.8}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             0.8}, {Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 0.8}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             0.8}, {12.566370614359172`, 0.8}, {0., 1.}, {
+            Rational[1, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {Rational[1, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[3, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[1, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[5, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[3, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[7, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[1, 2] Pi - 0.4 Cos[$CellContext`t$$], 1.}, {
+            Rational[9, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {
+            Rational[5, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             1.}, {Rational[11, 16] Pi - 0.3325878449210181 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[3, 4] Pi - 0.282842712474619 Cos[$CellContext`t$$], 
+             1.}, {Rational[13, 16] Pi - 0.22222809320784087` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[7, 8] Pi - 0.15307337294603593` Cos[$CellContext`t$$], 
+             1.}, {Rational[15, 16] Pi - 0.0780361288064513 
+             Cos[$CellContext`t$$], 1.}, {3.141592653589793, 1.}, {
+            Rational[17, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {Rational[9, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 1.}, {
+            Rational[19, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[5, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 1.}, {
+            Rational[21, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[11, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 1.}, {
+            Rational[23, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[3, 2] Pi + 0.4 Cos[$CellContext`t$$], 1.}, {
+            Rational[25, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[13, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 1.}, {
+            Rational[27, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[7, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 1.}, {
+            Rational[29, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[15, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 1.}, {
+            Rational[31, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {6.283185307179586, 1.}, {
+            Rational[33, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {Rational[17, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[35, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[9, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[37, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {
+            Rational[19, 8] Pi - 0.36955181300451473` Cos[$CellContext`t$$], 
+             1.}, {Rational[39, 16] Pi - 0.3923141121612922 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[5, 2] Pi - 0.4 Cos[$CellContext`t$$], 1.}, {
+            Rational[41, 16] Pi - 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[21, 8] Pi - 0.36955181300451473` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[43, 16] Pi - 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[11, 4] Pi - 0.282842712474619 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[45, 16] Pi - 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[23, 8] Pi - 0.15307337294603593` 
+             Cos[$CellContext`t$$], 1.}, {
+            Rational[47, 16] Pi - 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {9.42477796076938, 1.}, {
+            Rational[49, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {Rational[25, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 1.}, {
+            Rational[51, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[13, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 1.}, {
+            Rational[53, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[27, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 1.}, {
+            Rational[55, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[7, 2] Pi + 0.4 Cos[$CellContext`t$$], 1.}, {
+            Rational[57, 16] Pi + 0.3923141121612922 Cos[$CellContext`t$$], 
+             1.}, {Rational[29, 8] Pi + 
+             0.36955181300451473` Cos[$CellContext`t$$], 1.}, {
+            Rational[59, 16] Pi + 0.3325878449210181 Cos[$CellContext`t$$], 
+             1.}, {Rational[15, 4] Pi + 
+             0.282842712474619 Cos[$CellContext`t$$], 1.}, {
+            Rational[61, 16] Pi + 0.22222809320784087` Cos[$CellContext`t$$], 
+             1.}, {Rational[31, 8] Pi + 
+             0.15307337294603593` Cos[$CellContext`t$$], 1.}, {
+            Rational[63, 16] Pi + 0.0780361288064513 Cos[$CellContext`t$$], 
+             1.}, {12.566370614359172`, 1.}}]}]], 
+      "Specifications" :> {{$CellContext`t$$, 0, 4 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{1029., {337., 346.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7712291932379704`*^9, 3.771229220013253*^9}, 
+   3.7712292709943647`*^9, 3.771229307015003*^9, {3.771231465352482*^9, 
+   3.7712314828606253`*^9}, {3.7712315601109705`*^9, 3.771231593458757*^9}, 
+   3.771231687691771*^9, {3.771231724658738*^9, 3.771231827155246*^9}, {
+   3.771231982993327*^9, 3.771231984089415*^9}, {3.7712321905710297`*^9, 
+   3.771232193887124*^9}, {3.771232227632882*^9, 3.771232230161084*^9}, {
+   3.7712324620725365`*^9, 3.771232466312194*^9}, 3.7712326209723015`*^9, {
+   3.7712327534748335`*^9, 3.771232755113413*^9}},
+ CellLabel->
+  "Out[331]=",ExpressionUUID->"962562cb-6516-4265-b741-b76e261b493c"]
+}, Open  ]]
+},
+WindowSize->{1901, 976},
+WindowMargins->{{-9, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 8136, 165, 862, "Input",ExpressionUUID->"3f8ac071-97d8-4f2a-a409-3fc5344e2dae"],
+Cell[8719, 189, 72899, 1333, 711, "Output",ExpressionUUID->"962562cb-6516-4265-b741-b76e261b493c"]
+}, Open  ]]
+}
+]
+*)
+

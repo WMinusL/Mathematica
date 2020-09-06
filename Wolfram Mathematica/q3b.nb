@@ -1,0 +1,374 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14929,        366]
+NotebookOptionsPosition[     14459,        348]
+NotebookOutlinePosition[     14845,        365]
+CellTagsIndexPosition[     14802,        362]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"sol", ",", "t", ",", "x10", ",", "y1", ",", "x1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x10", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y10", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vx01", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vy01", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"equals", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x1", "''"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"0.1", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "-", 
+               RowBox[{"x1", "[", "t", "]"}]}], ")"}], "/", 
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], ",", "0"}], "}"}], "-", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"x1", "[", "t", "]"}], ",", 
+                  RowBox[{"y1", "[", "t", "]"}]}], "}"}]}], "]"}], "^", 
+              "3"}]}]}], "+", 
+           RowBox[{"0.1", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "-", 
+               RowBox[{"x1", "[", "t", "]"}]}], ")"}], "/", 
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "0"}], "}"}], "-", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"x1", "[", "t", "]"}], ",", 
+                  RowBox[{"y1", "[", "t", "]"}]}], "}"}]}], "]"}], "^", 
+              "3"}]}]}]}]}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y1", "''"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"0.1", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"0", "-", 
+               RowBox[{"y1", "[", "t", "]"}]}], ")"}], "/", 
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], ",", "0"}], "}"}], "-", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"x1", "[", "t", "]"}], ",", 
+                  RowBox[{"y1", "[", "t", "]"}]}], "}"}]}], "]"}], "^", 
+              "3"}]}]}], "+", 
+           RowBox[{"0.1", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"0", "-", 
+               RowBox[{"y1", "[", "t", "]"}]}], ")"}], "/", 
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "0"}], "}"}], "-", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"x1", "[", "t", "]"}], ",", 
+                  RowBox[{"y1", "[", "t", "]"}]}], "}"}]}], "]"}], "^", 
+              "3"}]}]}]}]}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"boundary", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x1", "[", "0", "]"}], "\[Equal]", "x10"}], ",", 
+         RowBox[{
+          RowBox[{"y1", "[", "0", "]"}], "\[Equal]", "y10"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x1", "'"}], "[", "0", "]"}], "\[Equal]", "vx01"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y1", "'"}], "[", "0", "]"}], "\[Equal]", "vy01"}]}], 
+        "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sol", "=", 
+       RowBox[{"NDSolve", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"equals", ",", "boundary"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x1", ",", "y1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "1000"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"ParametricPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Evaluate", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"x1", "[", "t", "]"}], ",", 
+             RowBox[{"y1", "[", "t", "]"}]}], "}"}], "/.", "\[VeryThinSpace]",
+            "sol"}], "]"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "T"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"MaxRecursion", "\[Rule]", "5"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Evaluate", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"x1", "[", "t", "]"}], ",", 
+            RowBox[{"y1", "[", "t", "]"}], ",", 
+            RowBox[{"10", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"x1", "'"}], "[", "t", "]"}], ")"}], "^", "2"}], 
+                "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"y1", "'"}], "[", "t", "]"}], ")"}], "^", "2"}]}], 
+               ")"}], "0.5"]}]}], "}"}], "/.", "\[VeryThinSpace]", "sol"}], 
+         "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "T"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "10"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"MaxRecursion", "\[Rule]", "5"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x10", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y10", ",", "2"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"vx01", ",", "0.3"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"vy01", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "1"}], "}"}], ",", "0.1", ",", "1000"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.79186546772536*^9, 3.7918655950628443`*^9}, {
+   3.791865660876303*^9, 3.791865788129204*^9}, {3.791865853401671*^9, 
+   3.791866010076989*^9}, {3.7918660703130927`*^9, 3.7918662520490637`*^9}, {
+   3.791866291126095*^9, 3.79186631045864*^9}, {3.7918663702324486`*^9, 
+   3.7918665617386093`*^9}, {3.7918666431686153`*^9, 
+   3.7918667093356996`*^9}, {3.79186674187951*^9, 3.7918667933956485`*^9}, {
+   3.7918668367719*^9, 3.791866838495146*^9}, {3.791866886170328*^9, 
+   3.791866901841544*^9}, {3.791866934762961*^9, 3.791866935703707*^9}, {
+   3.7918670519899206`*^9, 3.791867054554961*^9}, {3.7918672171188545`*^9, 
+   3.791867218406373*^9}, {3.79186727298728*^9, 3.7918672998711214`*^9}, {
+   3.7918673529984627`*^9, 3.791867478296507*^9}, {3.791867508823662*^9, 
+   3.791867528007657*^9}, 3.7918676110113277`*^9, {3.7918676710125275`*^9, 
+   3.7918676840619593`*^9}, {3.791867739187729*^9, 3.7918677426576653`*^9}, {
+   3.7918678961844826`*^9, 3.7918678991908393`*^9}, {3.7918679635535355`*^9, 
+   3.7918679644446974`*^9}, {3.7918680197101145`*^9, 
+   3.7918680205530024`*^9}, {3.791868257230325*^9, 3.7918682956651077`*^9}, {
+   3.7918683870600796`*^9, 3.791868424481286*^9}, {3.791868484757979*^9, 
+   3.7918685013526487`*^9}, {3.7918685836723366`*^9, 3.7918686180880146`*^9}, 
+   3.791868718844567*^9, {3.791871325097391*^9, 3.7918713525274706`*^9}, {
+   3.791871619236788*^9, 3.791871620780509*^9}, {3.7918717012160997`*^9, 
+   3.7918717658084803`*^9}, {3.7918718535981393`*^9, 3.791871862130227*^9}, {
+   3.791873591064423*^9, 3.7918735925789137`*^9}, 3.7918736439236774`*^9, {
+   3.7918737325255456`*^9, 3.7918737453168764`*^9}, {3.791874105252293*^9, 
+   3.7918741297170286`*^9}, 3.7918741804177275`*^9, {3.791874321871368*^9, 
+   3.791874341783825*^9}, {3.7920442388987675`*^9, 3.79204424424902*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"cb869888-4171-46c7-bd22-b6a2b0adf605"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T$$ = 1000., $CellContext`vx01$$ = 
+    0.2999999999999998, $CellContext`vy01$$ = 0, $CellContext`x10$$ = 
+    0, $CellContext`y10$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x10$$], 0}, -2, 2}, {{
+       Hold[$CellContext`y10$$], 2}, -2, 2}, {{
+       Hold[$CellContext`vx01$$], 0.3}, -2, 2}, {{
+       Hold[$CellContext`vy01$$], 0}, -2, 2}, {{
+       Hold[$CellContext`T$$], 1}, 0.1, 1000}}, Typeset`size$$ = {
+    532., {131., 139.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`x10$336709$$ = 
+    0, $CellContext`y10$336710$$ = 0, $CellContext`vx01$336711$$ = 
+    0, $CellContext`vy01$336712$$ = 0, $CellContext`T$336713$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T$$ = 1, $CellContext`vx01$$ = 
+        0.3, $CellContext`vy01$$ = 0, $CellContext`x10$$ = 
+        0, $CellContext`y10$$ = 2}, "ControllerVariables" :> {
+        Hold[$CellContext`x10$$, $CellContext`x10$336709$$, 0], 
+        Hold[$CellContext`y10$$, $CellContext`y10$336710$$, 0], 
+        Hold[$CellContext`vx01$$, $CellContext`vx01$336711$$, 0], 
+        Hold[$CellContext`vy01$$, $CellContext`vy01$336712$$, 0], 
+        Hold[$CellContext`T$$, $CellContext`T$336713$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> {$CellContext`equals = {
+          Derivative[2][$CellContext`x1][$CellContext`t] == 
+           0.1 ((-1 - $CellContext`x1[$CellContext`t])/Norm[{-1, 0} - {
+                 $CellContext`x1[$CellContext`t], 
+                 $CellContext`y1[$CellContext`t]}]^3) + 
+            0.1 ((1 - $CellContext`x1[$CellContext`t])/Norm[{1, 0} - {
+                 $CellContext`x1[$CellContext`t], 
+                 $CellContext`y1[$CellContext`t]}]^3), 
+           Derivative[2][$CellContext`y1][$CellContext`t] == 
+           0.1 ((0 - $CellContext`y1[$CellContext`t])/Norm[{-1, 0} - {
+                 $CellContext`x1[$CellContext`t], 
+                 $CellContext`y1[$CellContext`t]}]^3) + 
+            0.1 ((0 - $CellContext`y1[$CellContext`t])/Norm[{1, 0} - {
+                 $CellContext`x1[$CellContext`t], 
+                 $CellContext`y1[$CellContext`t]}]^3)}; $CellContext`boundary = \
+{$CellContext`x1[0] == $CellContext`x10$$, $CellContext`y1[
+            0] == $CellContext`y10$$, 
+           Derivative[1][$CellContext`x1][0] == $CellContext`vx01$$, 
+           Derivative[1][$CellContext`y1][
+            0] == $CellContext`vy01$$}; $CellContext`sol = 
+         NDSolve[{$CellContext`equals, $CellContext`boundary}, \
+{$CellContext`x1, $CellContext`y1}, {$CellContext`t, 0, 1000}]; 
+        ParametricPlot[{
+           Evaluate[
+            ReplaceAll[{
+              $CellContext`x1[$CellContext`t], 
+              $CellContext`y1[$CellContext`t]}, $CellContext`sol]]}, \
+{$CellContext`t, 0, $CellContext`T$$}, PlotRange -> {{-5, 5}, {-5, 5}}, 
+          MaxRecursion -> 5], 
+        ParametricPlot3D[{
+          Evaluate[
+           ReplaceAll[{
+             $CellContext`x1[$CellContext`t], 
+             $CellContext`y1[$CellContext`t], 
+             10 (Derivative[1][$CellContext`x1][$CellContext`t]^2 + 
+               Derivative[
+                 1][$CellContext`y1][$CellContext`t]^2)^0.5}, \
+$CellContext`sol]]}, {$CellContext`t, 0, $CellContext`T$$}, 
+         PlotRange -> {{-5, 5}, {-5, 5}, {0, 10}}, MaxRecursion -> 5]}, 
+      "Specifications" :> {{{$CellContext`x10$$, 0}, -2, 
+         2}, {{$CellContext`y10$$, 2}, -2, 
+         2}, {{$CellContext`vx01$$, 0.3}, -2, 
+         2}, {{$CellContext`vy01$$, 0}, -2, 2}, {{$CellContext`T$$, 1}, 0.1, 
+         1000}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{604., {299., 308.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7920439109764752`*^9, {3.792044025240963*^9, 3.7920440260787816`*^9}, 
+   3.7920440907190733`*^9, {3.7920442460790586`*^9, 3.79204425884019*^9}, {
+   3.7920442967206416`*^9, 3.792044303230274*^9}, 3.7920452632888217`*^9, {
+   3.792047568185935*^9, 3.7920475712037334`*^9}},
+ CellLabel->"Out[21]=",ExpressionUUID->"3d408900-fc09-4415-80e5-92dcce4c8795"]
+}, Open  ]]
+},
+WindowSize->{1918, 966},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 8901, 228, 646, "Input",ExpressionUUID->"cb869888-4171-46c7-bd22-b6a2b0adf605"],
+Cell[9484, 252, 4959, 93, 635, "Output",ExpressionUUID->"3d408900-fc09-4415-80e5-92dcce4c8795"]
+}, Open  ]]
+}
+]
+*)
+

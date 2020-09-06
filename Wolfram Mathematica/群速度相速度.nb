@@ -1,0 +1,308 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11781,        300]
+NotebookOptionsPosition[     10837,        276]
+NotebookOutlinePosition[     11194,        292]
+CellTagsIndexPosition[     11151,        289]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{
+          RowBox[{"\[Omega]1", "*", "t"}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"\[Omega]1", "/", "v1"}], ")"}], "*", "x"}], "+", 
+          "\[Phi]"}], "]"}], "+", 
+        RowBox[{"Cos", "[", 
+         RowBox[{
+          RowBox[{"\[Omega]2", "*", "t"}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"\[Omega]2", "/", "v2"}], ")"}], "*", "x"}]}], "]"}]}], 
+       ",", 
+       RowBox[{"2", 
+        RowBox[{"Cos", "[", 
+         RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{"\[Omega]1", "/", "v1"}], ")"}]}], "x"}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"\[Omega]2", "/", "v2"}], ")"}], " ", "x"}], "+", 
+            "\[Phi]", "+", 
+            RowBox[{"t", " ", "\[Omega]1"}], "-", 
+            RowBox[{"t", " ", "\[Omega]2"}]}], ")"}]}], "]"}]}], " ", ",", 
+       RowBox[{"Cos", "[", 
+        RowBox[{
+         RowBox[{"\[Omega]1", "*", "t"}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\[Omega]1", "/", "v1"}], ")"}], "*", "x"}], "+", 
+         "\[Phi]"}], "]"}], ",", 
+       RowBox[{"Cos", "[", 
+        RowBox[{
+         RowBox[{"\[Omega]2", "*", "t"}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\[Omega]2", "/", "v2"}], ")"}], "*", "x"}]}], "]"}]}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "30"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "30"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Omega]1", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Omega]2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"v1", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"v2", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "60"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7592234132460413`*^9, 3.7592234570450497`*^9}, {
+   3.759223501455498*^9, 3.759223518685214*^9}, {3.7592236047450733`*^9, 
+   3.759223865344329*^9}, {3.7592239242761035`*^9, 3.7592239319648714`*^9}, {
+   3.759224001923922*^9, 3.75922400715484*^9}, 3.759225132321995*^9, {
+   3.7592251675019336`*^9, 3.7592251720253487`*^9}, {3.759225622074402*^9, 
+   3.7592256328410273`*^9}, {3.7592256866112156`*^9, 3.759225739264633*^9}, {
+   3.759225920270874*^9, 3.759226039810572*^9}, {3.7592260802305174`*^9, 
+   3.7592261128804073`*^9}, {3.7712332982493505`*^9, 3.771233302600709*^9}},
+ CellLabel->
+  "In[333]:=",ExpressionUUID->"332ac0a9-7dc5-4b1a-ae2f-adf44d8377a1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 
+    22.13542257229469, $CellContext`v1$$ = -1.38, $CellContext`v2$$ = 
+    1.2000000000000002`, $CellContext`\[Phi]$$ = 
+    1.41, $CellContext`\[Omega]1$$ = 0.585, $CellContext`\[Omega]2$$ = 
+    0.5750000000000001, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Omega]1$$], 0, 2}, {
+      Hold[$CellContext`\[Omega]2$$], 0, 2}, {
+      Hold[$CellContext`v1$$], -5, 5}, {
+      Hold[$CellContext`v2$$], -5, 5}, {
+      Hold[$CellContext`\[Phi]$$], 0, 5}, {
+      Hold[$CellContext`t$$], 0, 60}}, Typeset`size$$ = {360., {109., 114.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Omega]1$246586$$ = 
+    0, $CellContext`\[Omega]2$246587$$ = 0, $CellContext`v1$246588$$ = 
+    0, $CellContext`v2$246589$$ = 0, $CellContext`\[Phi]$246590$$ = 
+    0, $CellContext`t$246591$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`t$$ = 
+        0, $CellContext`v1$$ = -5, $CellContext`v2$$ = -5, \
+$CellContext`\[Phi]$$ = 0, $CellContext`\[Omega]1$$ = 
+        0, $CellContext`\[Omega]2$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Omega]1$$, $CellContext`\[Omega]1$246586$$, 0], 
+        Hold[$CellContext`\[Omega]2$$, $CellContext`\[Omega]2$246587$$, 0], 
+        Hold[$CellContext`v1$$, $CellContext`v1$246588$$, 0], 
+        Hold[$CellContext`v2$$, $CellContext`v2$246589$$, 0], 
+        Hold[$CellContext`\[Phi]$$, $CellContext`\[Phi]$246590$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$246591$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[{Cos[$CellContext`\[Omega]1$$ $CellContext`t$$ - ($CellContext`\
+\[Omega]1$$/$CellContext`v1$$) $CellContext`x + $CellContext`\[Phi]$$] + 
+         Cos[$CellContext`\[Omega]2$$ $CellContext`t$$ - ($CellContext`\
+\[Omega]2$$/$CellContext`v2$$) $CellContext`x], 2 
+         Cos[(1/2) ((-($CellContext`\[Omega]1$$/$CellContext`v1$$)) \
+$CellContext`x + ($CellContext`\[Omega]2$$/$CellContext`v2$$) $CellContext`x + \
+$CellContext`\[Phi]$$ + $CellContext`t$$ $CellContext`\[Omega]1$$ - \
+$CellContext`t$$ $CellContext`\[Omega]2$$)], 
+         Cos[$CellContext`\[Omega]1$$ $CellContext`t$$ - ($CellContext`\
+\[Omega]1$$/$CellContext`v1$$) $CellContext`x + $CellContext`\[Phi]$$], 
+         Cos[$CellContext`\[Omega]2$$ $CellContext`t$$ - ($CellContext`\
+\[Omega]2$$/$CellContext`v2$$) $CellContext`x]}, {$CellContext`x, 0, 30}, 
+        PlotRange -> {{0, 30}, {-2, 2}}], 
+      "Specifications" :> {{$CellContext`\[Omega]1$$, 0, 
+         2}, {$CellContext`\[Omega]2$$, 0, 2}, {$CellContext`v1$$, -5, 
+         5}, {$CellContext`v2$$, -5, 5}, {$CellContext`\[Phi]$$, 0, 
+         5}, {$CellContext`t$$, 0, 60}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {265., 271.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7592238680181103`*^9, 3.7592238736743097`*^9}, {
+   3.75922393309433*^9, 3.759223939184803*^9}, 3.7592251336719365`*^9, 
+   3.759225172611888*^9, 3.7592252101219044`*^9, 3.759225634591156*^9, {
+   3.7592256728319254`*^9, 3.759225697211743*^9}, 3.759225740480943*^9, {
+   3.759225799460704*^9, 3.759225800629221*^9}, {3.759226032370761*^9, 
+   3.759226041360467*^9}, 3.7592261142442985`*^9, 3.759226946229827*^9, {
+   3.771233264644249*^9, 3.7712333041894855`*^9}, 3.771233336454172*^9, 
+   3.778660594807895*^9},
+ CellLabel->
+  "Out[333]=",ExpressionUUID->"d8ea365b-746e-4a8b-bac8-696e44ff149c"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.759233318296876*^9, 
+  3.771233213923937*^9},ExpressionUUID->"ea7b7c3b-ef52-478f-9a06-\
+a0f84fc54b15"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"Cos", "[", 
+    RowBox[{
+     RowBox[{"\[Omega]1", "*", "t"}], "-", 
+     RowBox[{"k1", "*", "x"}], "+", "\[Phi]"}], "]"}], "+", 
+   RowBox[{"Cos", "[", 
+    RowBox[{
+     RowBox[{"\[Omega]2", "*", "t"}], "-", 
+     RowBox[{"k2", "*", "x"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759224185864133*^9, 3.759224210737347*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"8e06c800-0cdc-4ba1-8105-5a908faa92d1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    RowBox[{"k1", " ", "x"}], "-", "\[Phi]", "-", 
+    RowBox[{"t", " ", "\[Omega]1"}]}], "]"}], "+", 
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    RowBox[{"k2", " ", "x"}], "-", 
+    RowBox[{"t", " ", "\[Omega]2"}]}], "]"}]}]], "Output",
+ CellChangeTimes->{3.75922421167327*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"732a8ceb-743e-4ce8-a5f4-468dccb6631f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Omega]1", "*", "t"}], "-", 
+      RowBox[{"k1", "*", "x"}], "+", "\[Phi]", "+", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Omega]2", "*", "t"}], "-", 
+        RowBox[{"k2", "*", "x"}]}], ")"}]}], ")"}], "/", "2"}], "]"}], "*", 
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Omega]1", "*", "t"}], "-", 
+      RowBox[{"k1", "*", "x"}], "+", "\[Phi]", "-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Omega]2", "*", "t"}], "-", 
+        RowBox[{"k2", "*", "x"}]}], ")"}]}], ")"}], "/", "2"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.75922431594668*^9, 3.7592243557839603`*^9}, {
+  3.759225070362054*^9, 3.7592250985421314`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"d84304af-13f0-415c-bf74-a0ba2f2c3b87"],
+
+Cell[BoxData[
+ RowBox[{"2", 
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "k1"}], " ", "x"}], "+", 
+      RowBox[{"k2", " ", "x"}], "+", "\[Phi]", "+", 
+      RowBox[{"t", " ", "\[Omega]1"}], "-", 
+      RowBox[{"t", " ", "\[Omega]2"}]}], ")"}]}], "]"}], " ", 
+  RowBox[{"Cos", "[", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "k1"}], " ", "x"}], "-", 
+      RowBox[{"k2", " ", "x"}], "+", "\[Phi]", "+", 
+      RowBox[{"t", " ", "\[Omega]1"}], "+", 
+      RowBox[{"t", " ", "\[Omega]2"}]}], ")"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.759225122102792*^9, 
+  3.759225122131846*^9}},ExpressionUUID->"093084f4-b2a4-4325-b19b-\
+920475e2f91a"]
+},
+WindowSize->{1920, 976},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3168, 85, 101, "Input",ExpressionUUID->"332ac0a9-7dc5-4b1a-ae2f-adf44d8377a1"],
+Cell[3751, 109, 4297, 76, 555, "Output",ExpressionUUID->"d8ea365b-746e-4a8b-bac8-696e44ff149c"]
+}, Open  ]],
+Cell[8063, 188, 150, 3, 28, "Input",ExpressionUUID->"ea7b7c3b-ef52-478f-9a06-a0f84fc54b15"],
+Cell[CellGroupData[{
+Cell[8238, 195, 481, 12, 45, "Input",ExpressionUUID->"8e06c800-0cdc-4ba1-8105-5a908faa92d1"],
+Cell[8722, 209, 410, 11, 32, "Output",ExpressionUUID->"732a8ceb-743e-4ce8-a5f4-468dccb6631f"]
+}, Open  ]],
+Cell[9147, 223, 879, 25, 45, "Input",ExpressionUUID->"d84304af-13f0-415c-bf74-a0ba2f2c3b87"],
+Cell[10029, 250, 804, 24, 67, "Input",ExpressionUUID->"093084f4-b2a4-4325-b19b-920475e2f91a"]
+}
+]
+*)
+
